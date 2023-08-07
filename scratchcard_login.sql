@@ -1,0 +1,99 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Feb 25, 2020 at 09:51 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `scratchcard_login`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card`
+--
+
+DROP TABLE IF EXISTS `card`;
+CREATE TABLE IF NOT EXISTS `card` (
+  `ID` int(4) NOT NULL AUTO_INCREMENT,
+  `PIN` varchar(15) NOT NULL,
+  `serial_No` varchar(15) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `date_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `card`
+--
+
+INSERT INTO `card` (`ID`, `PIN`, `serial_No`, `status`, `date_time`) VALUES
+(5, '976196294552920', '971316117909450', 'used', '2020-02-25 21:29:42'),
+(6, '596291840750042', '379706379790147', 'unused', '2020-02-25 21:29:42'),
+(7, '681345265577705', '317911279443672', 'unused', '2020-02-25 21:29:42'),
+(8, '180489580924527', '491997982997636', 'unused', '2020-02-25 21:29:42'),
+(9, '491142799032722', '807251069448723', 'unused', '2020-02-25 21:29:42'),
+(10, '510263009699935', '675593646631530', 'unused', '2020-02-25 21:45:08'),
+(11, '104059029851698', '885033073481489', 'unused', '2020-02-25 21:45:08'),
+(12, '254189046600289', '219098071820293', 'unused', '2020-02-25 21:45:08'),
+(13, '205830641410540', '444332476965722', 'unused', '2020-02-25 21:45:08'),
+(14, '027433925778548', '334366855871306', 'unused', '2020-02-25 21:45:08'),
+(15, '483930042439947', '108445047068346', 'unused', '2020-02-25 21:47:08'),
+(16, '076910950036111', '768796056954038', 'unused', '2020-02-25 21:47:09'),
+(17, '080194269665463', '001709346060603', 'unused', '2020-02-25 21:47:09'),
+(18, '775432669652165', '789409239903495', 'unused', '2020-02-25 21:47:09'),
+(19, '632826998914840', '360777038195271', 'unused', '2020-02-25 21:47:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `validate`
+--
+
+DROP TABLE IF EXISTS `validate`;
+CREATE TABLE IF NOT EXISTS `validate` (
+  `ID` int(4) NOT NULL AUTO_INCREMENT,
+  `PIN` varchar(15) NOT NULL,
+  `serial_No` varchar(15) NOT NULL,
+  `admin_no` varchar(50) NOT NULL,
+  `date_time` datetime NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `validate`
+--
+
+INSERT INTO `validate` (`ID`, `PIN`, `serial_No`, `admin_no`, `date_time`) VALUES
+(32, '976196294552920', '971316117909450', 'd', '2020-02-25 21:47:56'),
+(31, '8902134532', '7789002134', '5443', '2020-02-18 10:39:41'),
+(30, '8902134532', '7789002134', '5443', '2020-02-18 10:35:17'),
+(29, '8902134532', '7789002134', '5443', '2020-02-18 10:32:35'),
+(28, '8902134532', '7789002134', '5443', '2020-02-18 10:31:40'),
+(27, '8902134532', '7789002134', '5443', '2020-02-18 10:23:25'),
+(26, '8902134532', '7789002134', 'd', '2020-02-18 10:22:08'),
+(25, '8902134532', '7789002134', '5443', '2020-02-18 10:22:00'),
+(24, '8902134532', '7789002134', '5443', '2020-02-18 10:20:26'),
+(23, '8902134532', '7789002134', '5443', '2020-02-18 10:19:20'),
+(22, '8902134532', '7789002134', '6767', '2020-02-18 10:18:01'),
+(21, '8902134532', '7789002134', '5443', '2019-02-19 00:00:00');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
